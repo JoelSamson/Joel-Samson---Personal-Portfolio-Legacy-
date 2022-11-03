@@ -1,0 +1,1783 @@
+
+<!----
+Name: Joel Sadanand Samson
+G#: G01352483
+
+
+
+
+-->
+
+<!----Survey Webpage-->
+<!DOCTYPE html>
+<html style="background-color: green">
+<head>
+<title>CS Department Survey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/117510c07d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="gmucs.css" type="text/css" />
+
+
+<script src="jquery-3.6.1.js"></script>
+</style><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<!---some styles+-->
+<style>
+    #dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: rgb(9, 9, 9);
+  line-height: 1.8;
+  background: rgb(253, 253, 253);
+}
+.w3-bar-block .w3-bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    color: white;
+}
+.w3-white, .w3-hover-white:hover {
+    color: #000!important;
+    background-color: #000!important;
+}
+
+/*copied part*/
+h4 {
+    font-family: 'Roboto', sans-serif, 'arial';
+    font-weight: 400;
+    font-size: 20px;
+    color: #9b9b9b;
+    line-height: 1.5;
+}
+
+  /*navbar*/
+
+br{
+    background-color: #209639;
+}
+
+</style>
+</head>
+<body style="margin:20px" onload="cookie()">
+
+    <script>
+        $( function() {
+            $( "#tabs" ).tabs();
+          } );
+    </script>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Survey</a></li>
+    <li><a href="#tabs-2">Volgenau Website</a></li>
+  </ul>
+  <div id="tabs-1">
+    <!-- Navbar (sit on top) -->
+<div class="nav-wrapper">
+    <div class="logo-container">
+        <img class="logo" src="photos/gmu_logo.png" alt="Logo">
+    </div>
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i> MENU
+      </a>
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-tabs">
+                <li class="nav-tab"><a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-house-chimney"></i> HOME</a></li>
+                <li class="nav-tab"><a href="csmain.html" class="w3-bar-item w3-button"><i class="fa fa-house-chimney"></i> CS Department Page</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+  </div>
+</div>
+
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
+    <a href="csmain.html" class="w3-bar-item w3-button" onclick="toggleFunction()">CS Department</a>
+
+  </div>
+
+<div class="gmulog">
+  <header class="w3-container ">
+    <div class="padded-row">
+        <div id="cs-logo  ">
+            <h1 class="heading">
+                <a class="img-link" href="">
+                    <img class="img-logo" src="photos/logo.png" alt="GMU CS Department">
+                </a>
+            </h1>
+        </div>
+    </div>
+</header>
+</div>
+
+<div class="student-survey"><h1><center>Student Survey</center></h1></div>
+<div id="hello">hello</div>
+<script type = "text/javascript">
+
+    function wp(){
+      document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC;  path=/;"
+        location.reload();
+        document.execCommand("ClearAuthenticationCache");
+    }
+
+    function cookie(){
+      //get the date
+      var date=new Date();
+      //get the hour
+      var hour=date.getHours();
+      //variable to store the cookie name
+      var name;
+      //get the ID of the div element in which the message is going to be printed
+      var hello=document.getElementById("hello");
+      //Starting message
+      var greeting="<h1>Good ";
+        //check what time of day it is and append it to the message
+    if(hour<12)
+    {
+      greeting+='morning ';
+    }
+    else
+    {
+      hour=hour-12;
+      if(hour<6)
+      {
+        greeting+='afternoon ';
+      }
+      else
+      {
+        greeting+='evening ';
+      }
+    }
+    const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
+    //get the name stored in cookie
+    name=getCookie("name");
+    //if the cookie name is not empty display welcome back
+    if(name!=""){
+      //Capitalise first letter in name
+      name=name[0].toUpperCase()+name.slice(1);
+      greeting+=", Welcome back "+name+" to SWE642 Survey!</h1><br>";
+    }else//if the cookie is empty ask user to enter his name to store the users name in the cookie
+    {
+
+        name=prompt("Please Enter your name","");
+      if(name!="" && name!=null && isAlphaNumeric(name)){
+        //Capitalise first letter in name
+        name=name[0].toUpperCase()+name.slice(1);
+        setCookie("name",name);
+        greeting+=name+", Welcome to SWE642 Survey!</h1><br>";
+
+    }
+    }
+    greeting+="<a href = 'javascript:wp()'> "+ "Click Here if you are not " + name + ". " + "</a>" ;
+    //add greeting to the div element hello
+    hello.innerHTML=greeting;
+    }
+
+
+
+//from w3schools
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+//from w3schools
+function setCookie(cname, cvalue) {
+  const d = new Date();
+  d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+//from w3schools
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+//from w3schools
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", user, 365);
+    }
+  }
+}
+
+</script>
+<p class="w3-container w3-xlarge">Please fill out the Survey regarding the semester start Campus Visit Held on August 19th</p>
+<p class="w3-container w3-xlarge">Feedback is Greatly appreciated and will help us improve on certain aspects during the next visit</p>
+<h3> <center>Enter Details Below</center></h3>
+
+<!---Survey Form-->
+<form class="survey" method="post" autocomplete>
+    <fieldset class="w3-container">
+        <legend>User Information</legend>
+        <table class="w3-table">
+            <tr>
+                <!--First Name-->
+                <td><label for="fname">First name:*</label><br></td>
+                <td><input type="text" id="fname" name="fname" size="20" autofocus="on" placeholder="Enter your First Name" required><br></td>
+                <td><p id="errorfname" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <!--Last Name-->
+                <td><label for="lname">Last name:*</label><br></td>
+                <td> <input type="text" id="lname" name="lname" size="20" placeholder="Enter your Last Name" required><br></td>
+                <td><p id="errorlname" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <!--GMU Username-->
+                <td><label for="username">Username:*</label><br></td>
+                <td><input type="text" id="username" name="username" size="20" placeholder="NET UID" required><br></td>
+            </tr>
+            <tr>
+                <!---GMU Mail-->
+                <td><label for="email">Enter your GMU Email:*</label><br></td>
+                <td><input type="email" id="email" name="email" placeholder="your_username@gmu.edu" required><br></td>
+            </tr>
+            <tr>
+                <!---Phone Number-->
+                <td><label for="phone">Enter your phone number:</label><br></td>
+                <td><input type="tel" id="phone" name="phone"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="+1-(xxx)-xxx-xxxx"><br></td> <!----->
+            </tr>
+            <tr>
+                <!---Address-->
+                <td><label for="address">Enter your Address:</label><br></td>
+                <td><input type="text" id="address" name="address" placeholder="Address"></input><br></td>
+            </tr>
+            <tr>
+                <!---Address-->
+                <td><label for="street">Enter your Street:</label><br></td>
+                <td><input type="text" id="street" name="street" placeholder="Enter Street:"></input><br></td>
+            </tr>
+            <script>
+            function validzip() {
+
+            //get the zipcode from the input field
+            var zipcode=document.getElementById("zipcode").value;
+            //using try catch block to get catch exception if error happens
+            try {
+              // make a async request
+                var asyncRequest = new XMLHttpRequest();
+                asyncRequest.onreadystatechange = function () {
+                callBack(zipcode, asyncRequest);
+                };
+                //get the zipcodes that is stored in zipcodes.json
+                asyncRequest.open("GET", "zipcodes.json", true);
+                asyncRequest.withCredentials = true;
+                asyncRequest.send();
+                }
+                //if error happens
+                catch (exception) {
+                console("Request failed.");
+                }
+              }
+              //fucntion to check callback
+              function callBack(zipcode, asyncRequest) {
+              //tell the user that we are validating the zipcode
+              document.getElementById("ziperr").innerHTML = "Validating Zip...";
+              //setting div with city to nothing
+              document.getElementById('city').innerHTML = "";
+              //setting div with state to nothing
+              document.getElementById('state').innerHTML = "";
+              if (asyncRequest.readyState == 4) {
+                if (asyncRequest.status == 200 || asyncRequest.status == 304) {
+                  var json_data = JSON.parse(asyncRequest.responseText);
+                  //validate the zipcode
+                  result = isValid(zipcode, json_data)
+                  if (result.valid)
+                  {
+                    //set the div with city to the value from the json file
+                    document.getElementById('city').innerHTML = result.city;
+                    //set the div with state to the value from the json file
+                    document.getElementById('state').innerHTML = result.state;
+                    //set error div to nothing
+                    document.getElementById('ziperr').innerHTML = '';
+                    } else
+                    {
+                      document.getElementById("ziperr").innerHTML="Invalid Zip Code.";
+                    }
+                  }
+                }
+              }
+              //function to validate the zipcodes with what is stored in json
+              function isValid(zipcode, json_data) {
+              var zipcodes = json_data.zipcodes;
+              for (var zipCode of zipcodes) {
+                if(zipCode.zip === zipcode) {
+                  return {
+                    valid: true,
+                    city: zipCode.city,
+                    state: zipCode.state
+                    };
+                  }
+                }
+                return {
+                  valid: false
+                  };
+                }
+            </script>
+            <!---Zipcode-->
+            <tr>
+                <td><label>Zip Code</label></td>
+                <td><input id="zipcode" type="number" placeholder="try 22030 for fairfax " pattern="^\d{5}(?:[-\s]\d{4})?$" onblur="validzip()"; /><br /><label id="ziperr" style="color:red"></label></td>
+            </tr >
+            <!----City-->
+            <tr>
+                <td><label>City</label></td>
+                <td><label id="city"></label></td>
+            </tr>
+            <!----state-->
+            <tr>
+              <td><label>State</label></td>
+              <td><label id="state"></label></td>
+            </tr>
+            <!---State Code-->
+                <td><label for="country_code">State code:*</label><br></td>
+                <td><input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{2}" title="Country Code 2 Letters" max=3 placeholder="State code" required><br></td>
+            </tr>
+
+            <tr>
+                <td>
+            <!---Date-->
+                    <label for="todays_date">Enter Todays Date:</label><br></td>
+                    <td><input type="date" id="today_date" name="todays_date" max="2022-9-1" min="2022-8-19"><br></td>
+            </tr>
+            <tr>
+            <!--URL-->
+                <td> <label for="homepage">Enter your URL:</label><br></td>
+                <td><input type="url" id="homepage" name="homepage" placeholder="Your Website Address"><br></td>
+            </tr>
+</table>
+</fieldset>
+<br>
+<fieldset class="w3-container">
+    <legend>Feedback</legend>
+    <table class="w3-table">
+
+        <tr>
+            <!---CheckBox-->
+            <td><label for="liked_most">What did you like the most about the campus visit?*</label><br></td>
+            <td><label><input name="liked_most" type="checkbox" class="cb">Students</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Location</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Campus</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Atmosphere</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Dorm Rooms</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Sports</label><br>
+            </td>
+            <tr>
+                <!--Radio Buttons-->
+            <td><label for="how_did">How did you hear about our University*</label><br></td>
+            <td><label><input name="how_did" type="Radio" class="rb">Friend</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Senior</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Instagram</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Television</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Internet</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Other</label><br>
+                </td>
+            </tr>
+            <tr>
+                <!---Drop Down list-->
+                <td><label for="likely" id="likely" name="likely">How Likely are you going to be able to Recommend GMU to other People?*</label></td>
+                <td><select name="likely" id="likely" placeholder="Select" required>
+                    <option>Very Likely</option>
+                    <option>Likely</option>
+                    <option>Unlikely</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="w3-large">Additional Comments</p></td>
+                <td><textarea name="message" rows="4" cols="40" placeholder="Please write any comments related to any aspect of the Campus visit."></textarea><br></td>
+            </tr>
+        </tr>
+    </table>
+</fieldset>
+<br>
+<fieldset class="w3-container">
+    <legend>Graduation Month and Year*</legend>
+    <table class="w3-table">
+        <tr>
+            <td><label for="grad-time">Please enter your graduation Month:*</label></td>
+            <td>
+                <label for="grad-month">Month:</label>
+                <input type="text" name="grad-month" id="grad-month" list="grad-list" required>
+                <datalist id="grad-list" required>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+                </datalist>
+                <br>
+                <br>
+                <label for="Year:">Year:</label>
+                <input type="text" id="year" name="year" placeholder="Enter Year" required>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<br>
+<fieldset class="w3-container">
+    <legend>Calculate Average and Maximum </legend>
+    <table class="w3-table">
+        <tr>
+            <td><label>Values:</label></td>
+            <td>
+                <input id="computation" type="text" onblur="calculate();" placeholder="Example 1,1,1,1,1,1,1,1,1,1"/>
+                <script type="text/javascript">
+                    function calculate(){
+
+                        //get the value of the input from the id computation
+                        var u_input=document.getElementById("computation").value;
+                        //split the value using , to get 10 values
+                        var arr=[];
+                        arr=u_input.split(",");
+                        console.log(arr.length)
+                        //convert to integer array
+                        var int_arr=arr.map( function(val){
+                            return parseInt(val,10);}
+                        ) ;
+
+                        //check the number of elements in the array it should be 10
+                        if(int_arr.length<10){
+                            document.getElementById("computation_error").innerHTML = "Enter at least ten values separated by commas";
+                            document.getElementById("average").innerHTML="";
+                            document.getElementById("maximum").innerHTML="";
+                            return;
+
+                        }
+                        //check if the array elements seperated by commas are between 0 to 100
+                        if((Math.max(...int_arr)>100) || Math.min(...int_arr) < 1){
+                            document.getElementById("computation_error").innerHTML = "Enter at values between 0 an 100";
+                            document.getElementById("average").innerHTML="";
+                          document.getElementById("maximum").innerHTML="";
+                          return;
+
+                        }else{
+                          document.getElementById("computation_error").innerHTML="";
+
+                          //get the maximum
+                            document.getElementById("maximum").innerHTML = "Maximum is: "+ Math.max(...int_arr);
+                            //get the average
+                            function getavgval(){
+                            var val=0;
+                            for(var i=0;i<10;i++){
+                                var val=val+int_arr[i];
+                            }
+                            var avg=val/int_arr.length;
+                            return avg;
+                            }
+                            document.getElementById("average").innerHTML = "Average is: "+ getavgval();
+                        }
+                        document.getElementById("computation").innerHTML="";
+                        arr=[]
+                        int_arr=[]
+                      }
+                </script>
+                <br />
+                <label id="computation_error" class="error" style="color:red"></label>
+            </td>
+        </tr>
+        <tr><td><label>Average</label></td>
+            <td><label id="average"></label></td>
+        </tr>
+        <tr><td><label>Maximum</label></td>
+            <td><label id="maximum"></label></td>
+        </tr>
+    </table>
+</fieldset>
+<div class="" style="height:100px"><center>
+    <br>
+
+    <script type="text/javascript">
+
+        function validateform_submit(){
+            var val=0;
+            //regular expression for alphabet
+            var alphabet=/^[A-Za-z]+$/;
+            //regular expression for address
+            var addressexp=/^[a-zA-Z0-9]+$/;
+            //regular expression for email
+            var emailexp=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63}$/i
+            val=0;
+            //message if form successfully submitted
+            var messagetouser="Feed Back Submitted";
+            var error_message=""
+
+
+            //var survey=document.getElementsByClassName("survey");
+            //get the fname
+            var fname=document.getElementById("fname").value;
+            //check if first name is correct
+            if(!fname.match(alphabet))
+            {
+                error_message+="Please Enter a Valid First Name. \n";
+                document.getElementById("fname").value="";
+            }
+            //get the last name
+            var lname=document.getElementById("lname").value;
+            //check if last name is correct
+            if(!lname.match(alphabet))
+            {
+                error_message+="Please Enter a Valid Last Name. \n";
+                document.getElementById("lname").value="";
+            }
+            //get the street
+            var loc=document.getElementById("address").value;
+            //check if street is correct
+            if(!loc.match(addressexp))
+            {
+                error_message+="Please Enter a Valid Street Adress. \n";
+                document.getElementById("address").value="";
+            }
+            //check the liked count
+            var liked=document.getElementsByName("liked_most");
+            var count=0
+            for(var i=0;i<liked.length;i++){
+                if(liked[i].checked==true){
+                    count=count+1;
+                }
+            }
+            if(count<2){
+                error_message+="Please select at least 2 options for what you liked during the Event. \n";
+                for(var i=0;i<liked.length;i++){
+                    liked[i].checked=false;
+                }
+            }
+            count=0
+            // check the checked count
+            var hear=document.getElementsByName("how_did");
+            var check=false;
+            for(var i=0;i<hear.length;i++){
+                if(hear[i].checked==true){
+                    check=true;
+                }
+            }
+            if(check==false){
+                error_message+="Please select at least One way that you heard about this Event .\n";
+                for(var i=0;i<hear.length;i++){
+                    hear[i].checked=false;
+                }
+            }
+            check=false;
+            //get the email
+            var email_id=document.getElementById("email").value;
+            //check the email
+            if(!email_id.match(emailexp))
+            {
+                error_message+="\nPlease enter a valid Email ID. \n";
+                document.getElementById("email").value="";
+            }
+            //check if any errors happened
+            if(error_message.length==0){
+              //if no errors then send feedback to user and reload
+              //alert(messagetouser);
+              x=document.getElementById("errors");
+                x.innerHTML=messagetouser;
+                $( "#submit" ).click(function( event ) {
+	                  $( "#dialog_error" ).dialog( "open" );
+	                    event.preventDefault();
+                  });
+              error_message="";
+              $( "#reset" ).click();
+            }else{
+              //display the errors in the JUI dialog box
+                x=document.getElementById("errors");
+                x.innerHTML=error_message;
+                $( "#submit" ).click(function( event ) {
+	                  $( "#dialog_error" ).dialog( "open" );
+	                    event.preventDefault();
+                  });
+        error_message="";
+            }
+}
+
+function formclear(){
+    document.getElementById("average").innerHTML="";
+    document.getElementById("maximum").innerHTML="";
+    document.getElementById("fname").innerHTML="";
+    document.getElementById("lname").innerHTML="";
+    document.getElementById("address").innerHTML="";
+}
+</script>
+
+<button class="w3-green w3-button" id="submit"><input type="submit" id="submit" onclick="validateform_submit()"></button>
+<button class="w3-green w3-button"><input type="reset" id="reset" onclick="formclear()"></button></center>
+</div>
+</form>
+
+<div class=""><center><p>Link to go back to the CS Department Webpage</p><br><button class="w3-button w3-green"><a href="csmain.html" alt="">Go Back</a></button></center></div>
+
+<div class="w3-container w3-green" style="position:relative;     padding-bottom: 78px;
+top: -10%;">
+
+    <p>
+        Department of Computer Science<br>
+        Nguyen Engineering Building<br>
+        4400 University Drive<br>
+        Fairfax, VA 22030</p>
+        <hr>
+        <p> Contact<br>
+            703-993-1530 (P)<br>
+            703-993-1710 (F)</p>
+  </div>
+
+<div class="last w3-container" style="background:#333; height:200px;position:fixed"><div class="logo"><a href="cs.gmu.edu"><img src="gmu_white_logo.png" class="w3-border w3-padding image-logo" alt="Logo"></a></div></div>
+
+<div class="fixed"><a href="https://www.gmu.edu/"><img src="photos/gmu_white_logo.png" class="image-logo" alt="Logo"></a></div>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+<script>
+// Modal Image Gallery
+
+
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+<!--Notification dialog box-->
+<div id="dialog_error" title="Notification">
+
+<p id="errors"></p>
+
+
+</div>
+<script>
+//dialog box for notification
+    $( "#dialog_error" ).dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "Ok",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		{
+			text: "Cancel",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
+});
+
+
+
+
+</script>
+
+  </div>
+  <div id="tabs-2">
+
+    <div id="skip">
+      <a class="visually-hidden focusable skip-link" href="#content">
+        Skip to content
+      </a>
+    </div>
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNPT7Q2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div  class="page-standard has-slides">
+  <div class="header-top">
+    <!-- ______________________ Emergency Alert _______________________ -->
+      <div data-block-plugin-id="emergency_alerts" class="block block-gmu-emergency-alerts block-emergency-alerts">
+
+
+      <div class="gmu-emergency-alerts"></div>
+
+  </div>
+
+    <!-- /header -->
+    <header id="banner">
+      <div class="sf-banner">
+        <div class="sf-banner-inner">
+                          <div class="region region-banner">
+    <div id="block-parentsite" data-block-plugin-id="parent_site" class="block block-gmu-core block-parent-site">
+
+
+      <div class="parent-site-container"><a href="https://www.gmu.edu"><span class="fa fa-chevron-circle-left"></span><span class="small-univesity-name">Mason</span><span class="full-univesity-name">George Mason University</span></a></div>
+
+  <div class="parent-school-ext"><a href="https://cec.gmu.edu/" class="parent-site-link parent-school-name" data-tippy="College of Engineering and Computing" data-tippy-arrow="true" data-tippy-placement="bottom" title="College of Engineering and Computing">CEC</a></div>
+
+  </div>
+<div data-block-plugin-id="utility_menu_block" class="block-utilitymenublock block block-gmu-core block-utility-menu-block">
+
+
+      <div class="utility-link">
+  <ul>
+        <li>
+      <a href =/admissions-aid/apply-now>Apply
+      </a>
+    </li>
+        <li>
+      <a href =/give>Give
+      </a>
+    </li>
+        <li>
+      <a href =http://mymason.gmu.edu>MyMason
+      </a>
+    </li>
+        <li>
+      <a href =https://patriotweb.gmu.edu/>PatriotWeb
+      </a>
+    </li>
+        <li>
+      <a href =http://peoplefinder.gmu.edu/>Peoplefinder
+      </a>
+    </li>
+        <li>
+      <a href =http://www.gomason.com/>Athletics
+      </a>
+    </li>
+        <li>
+      <a href =/news>News
+      </a>
+    </li>
+        <li>
+      <a href =/calendar>CALENDAR
+      </a>
+    </li>
+        <li>
+      <a href =https://library.gmu.edu/>Library
+      </a>
+    </li>
+        <li>
+      <a href =/graduation>Graduation
+      </a>
+    </li>
+      </ul>
+</div>
+
+  </div>
+
+
+<nav role="navigation"  id="block-sf-mason-basic-main-menu" class="b-main-menu block block-menu navigation block-system-menublock menu--main" data-block-plugin-id="system_menu_block:main">
+  <div class="mobile-only"><div data-block-plugin-id="system_branding_block" class="site-branding block block-system block-system-branding-block">
+
+
+              <a href="/" title="Home" rel="home" class="logo">
+            <img src="/sites/g/files/yyqcgq321/files/Web-Mason50-lockup-stacked-whiteandgold%403x_0_4.png" alt="Home"/>
+        </a>
+                <div class="site-branding-text">
+                            <div class="site-branding-name">
+                    <a href="/" title="Home" rel="home">Volgenau School of Engineering</a>
+                </div>
+                                        <div class="site-branding-abbr">
+                    <a href="/" title="Home" rel="home">Volgenau</a>
+                </div>
+
+                            <div class="site-branding-slogan">PATRIOTS BRAVE &amp; BOLD</div>
+                    </div>
+    </div>
+</div>
+
+
+              <ul class="menu menu-level--0">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li class="main-menu-item multiline">
+        <a href="/academics/why-choose-volgenau" data-drupal-link-system-path="node/21">Why Choose Volgenau?</a>
+                                <ul class="menu menu-level--1">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li>
+        <a href="/why-choose-volgenau/undergrad-research-opportunities" data-drupal-link-system-path="node/26">Undergrad Research Opportunities</a>
+              </li>
+          <li>
+        <a href="/why-choose-volgenau/meet-our-faculty" data-drupal-link-system-path="node/86">Meet Our Faculty</a>
+              </li>
+
+    </ul>
+
+              </li>
+          <li class="main-menu-item">
+        <a href="/academics" data-drupal-link-system-path="node/11">Academics</a>
+                                <ul class="menu menu-level--1">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li>
+        <a href="/academics/accreditation" data-drupal-link-system-path="node/16">Accreditation</a>
+              </li>
+          <li>
+        <a href="/academics/bioengineering-department" data-drupal-link-system-path="node/7281">Bioengineering Department</a>
+              </li>
+          <li>
+        <a href="/academics/civil-environmental-and-infrastructure-engineering" data-drupal-link-system-path="node/7286">Civil, Environmental, and Infrastructure Engineering</a>
+              </li>
+          <li>
+        <a href="/academics/cyber-security-department" data-drupal-link-system-path="node/7291">Cyber Security Department</a>
+              </li>
+          <li>
+        <a href="/academics/data-analytics-engineering" data-drupal-link-system-path="node/6976">Data Analytics Engineering</a>
+              </li>
+          <li>
+        <a href="/academics/electrical-and-computer-engineering" data-drupal-link-system-path="node/7296">Electrical and Computer Engineering</a>
+              </li>
+          <li>
+        <a href="/academics/mechanical-engineering-department" data-drupal-link-system-path="node/7301">Mechanical Engineering Department</a>
+              </li>
+          <li>
+        <a href="/academics/systems-engineering-and-operations-research" data-drupal-link-system-path="node/7306">Systems Engineering and Operations Research</a>
+              </li>
+          <li>
+        <a href="/academics/undergraduate-programs" data-drupal-link-system-path="node/31">Undergraduate Programs</a>
+              </li>
+          <li>
+        <a href="/academics/graduate-programs" data-drupal-link-system-path="node/36">Graduate Programs</a>
+                                <ul class="menu menu-level--2">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li>
+        <a href="/academics/graduate-programs/accelerated-masters-programs" data-drupal-link-system-path="node/41">Accelerated Master&#039;s Programs</a>
+              </li>
+
+    </ul>
+
+              </li>
+
+    </ul>
+
+              </li>
+          <li class="main-menu-item">
+        <a href="/research" data-drupal-link-system-path="node/176">Research</a>
+                                <ul class="menu menu-level--1">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li>
+        <a href="/research/centers-and-labs" data-drupal-link-system-path="node/186">Centers and Labs</a>
+              </li>
+
+    </ul>
+
+              </li>
+          <li class="main-menu-item">
+        <a href="/partners" data-drupal-link-system-path="node/411">Partners</a>
+                                <ul class="menu menu-level--1">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li>
+        <a href="/partners/alumni" data-drupal-link-system-path="node/416">Alumni</a>
+              </li>
+
+    </ul>
+
+              </li>
+          <li class="main-menu-item">
+        <a href="/about" data-drupal-link-system-path="node/326">About</a>
+                                <ul class="menu menu-level--1">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li>
+        <a href="/about/news-information" data-drupal-link-system-path="node/336">News &amp; Information</a>
+                                <ul class="menu menu-level--2">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li>
+        <a href="/about/news-information/press-kit" data-drupal-link-system-path="node/341">Press Kit</a>
+              </li>
+          <li>
+        <a href="/about/news-information/brief-history-school" data-drupal-link-system-path="node/401">A Brief History of the School</a>
+              </li>
+
+    </ul>
+
+              </li>
+          <li>
+        <a href="/about/jobs-and-internships" data-drupal-link-system-path="node/376">Jobs and Internships</a>
+              </li>
+
+    </ul>
+
+              </li>
+              <li id="custom-search-block-container">
+        <div class="search-form-wrapper" id="search-form-wrapper">
+    <a class="off-screen search-icon" aria-label="Open and close search form" id="search-icon" href="/st-search" tabindex=""></a>
+</div>
+
+      </li>
+
+    </ul>
+
+
+
+    <div class="mobile-nav">
+    <div data-block-plugin-id="utility_menu_block" class="block-utilitymenublock block block-gmu-core block-utility-menu-block">
+
+
+      <div class="utility-link">
+  <ul>
+        <li>
+      <a href =/admissions-aid/apply-now>Apply
+      </a>
+    </li>
+        <li>
+      <a href =/give>Give
+      </a>
+    </li>
+        <li>
+      <a href =http://mymason.gmu.edu>MyMason
+      </a>
+    </li>
+        <li>
+      <a href =https://patriotweb.gmu.edu/>PatriotWeb
+      </a>
+    </li>
+        <li>
+      <a href =http://peoplefinder.gmu.edu/>Peoplefinder
+      </a>
+    </li>
+        <li>
+      <a href =http://www.gomason.com/>Athletics
+      </a>
+    </li>
+        <li>
+      <a href =/news>News
+      </a>
+    </li>
+        <li>
+      <a href =/calendar>CALENDAR
+      </a>
+    </li>
+        <li>
+      <a href =https://library.gmu.edu/>Library
+      </a>
+    </li>
+        <li>
+      <a href =/graduation>Graduation
+      </a>
+    </li>
+      </ul>
+</div>
+
+  </div>
+
+  </div>
+</nav>
+    <div class="mobile-links">
+        <ul>
+          <li>
+            <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i><span class="site-name">Volgenau School of Engineering</span></a>
+            <span class="js-navigation"><i class="fa fa-bars" aria-hidden="true"></i></span>
+            <span class="js-search search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+                  </div>
+      </div>
+
+      <div id="search-form-container">
+        <form id="search-form" class="search-form">
+          <div class="search-box">
+            <input type="text" id="search-input" class="st-default-search-input" aria-label="Search" />
+            <button type="submit" class="button" tabindex="1"><span>Search</span></button>
+          </div>
+        </form>
+      </div>
+
+    </header>
+    <!-- ______________________ BRANDING _______________________ -->
+  </div>
+
+  <header id="branding" class="hero-background-landing_page"
+                    style=" background-image: url( https://volgenau.gmu.edu/sites/g/files/yyqcgq321/files/styles/crop_header_background_image_tall/public/2020-11/DefaultBackground1_0.jpg?itok=73RA42o5)"
+          >
+                      <div id="block-headerhero" data-block-plugin-id="gmu_core_header_hero" class="block block-gmu-core block-gmu-core-header-hero">
+
+
+
+<div class="hero">
+    <div class="slick-slider">
+                    <div class="slick__slide slide"
+                 style="background: url('https://volgenau.gmu.edu/sites/g/files/yyqcgq321/files/styles/crop_slide/public/2022-10/Ffx-Campus-sunset-2900x1631.jpg?h=a1de9496&amp;itok=qSdjLR-p');
+                         background-position: 50% 50%;
+                         background-repeat: no-repeat;
+                         background-size: cover;
+                         min-height:680px;">
+                <div class="slide__caption">
+                    <h2>
+                                                  <a href="#">Rise in the Rankings</a>
+                                            </h2>
+                    <div class="slide-caption">
+                        <div class="slide-caption-content">
+                            <div class="slide-caption-text">
+                                <p>
+                                The College of Engineering and Computing moved up to 92 in rankings for the top 100 for graduate programs in the 2023 U.S. News &amp; World Report rankings.
+                                </p>
+                                                            </div>
+                                                        <div class="slide-cta">
+                                <a href="https://www.usnews.com/best-graduate-schools/top-engineering-schools/george-mason-university-02184#:~:text=George%20Mason%20University%20(Volgenau)%202023,widely%20accepted%20indicators%20of%20excellence.&amp;text=See%20how%20this%20school%20scored,indicators%20used%20in%20the%20rankings.">Our 2023 U.S. News &amp; World Report rankings</a>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                    <div class="slick__slide slide"
+                 style="background: url('https://volgenau.gmu.edu/sites/g/files/yyqcgq321/files/styles/crop_slide/public/2022-01/MicrosoftTeams-image%20%2820%29.png?itok=sERldEjh');
+                         background-position: 50% 50%;
+                         background-repeat: no-repeat;
+                         background-size: cover;
+                         min-height:680px;">
+                <div class="slide__caption">
+                    <h2>
+                                                  <a href="https://cec.gmu.edu/news/2021-12/civil-engineering-students-internship-leads-job-heart-capitol">Restoring National Infrastructure</a>
+                                            </h2>
+                    <div class="slide-caption">
+                        <div class="slide-caption-content">
+                            <div class="slide-caption-text">
+                                <p>
+                                Mason Engineering student Lindsey Davis turned an internship into a full-time job working to restore the historic Cannon House Office Building.
+                                </p>
+                                                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                    <div class="slick__slide slide"
+                 style="background: url('https://volgenau.gmu.edu/sites/g/files/yyqcgq321/files/styles/crop_slide/public/2021-09/Celso%20Volgenau.jpg?itok=RP8LyOCB');
+                         background-position: 50% 50%;
+                         background-repeat: no-repeat;
+                         background-size: cover;
+                         min-height:680px;">
+                <div class="slide__caption">
+                    <h2>
+                                                  <a href="https://volgenau.sitemasonry.gmu.edu/news/2021-07/shoring-marylands-coastline-against-sea-level-rise">Shoring up Maryland&#039;s Coastline</a>
+                                            </h2>
+                    <div class="slide-caption">
+                        <div class="slide-caption-content">
+                            <div class="slide-caption-text">
+                                <p>
+                                Associate Professor Celso Ferreira has teamed up with Maryland’s Department of Natural Resources and the Nature Conservancy to predict the effects of sea-level rise and consider strategies to address the situation as part of a three-year $738,000 grant.
+                                </p>
+                                                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                    <div class="slick__slide slide"
+                 style="background: url('https://volgenau.gmu.edu/sites/g/files/yyqcgq321/files/styles/crop_slide/public/2021-04/dragos-slider2.jpg?h=e1824fdf&amp;itok=1PNeyLem');
+                         background-position: 50% 50%;
+                         background-repeat: no-repeat;
+                         background-size: cover;
+                         min-height:680px;">
+                <div class="slide__caption">
+                    <h2>
+                                                  <a href="https://volgenau.gmu.edu/news/2021-04/cybersecurity-engineering-design-team-protects-critical-infrastructure">Securing Critical Infrastructure</a>
+                                            </h2>
+                    <div class="slide-caption">
+                        <div class="slide-caption-content">
+                            <div class="slide-caption-text">
+                                <p>
+                                A cybersecurity engineering senior design team is penetration testing a scaled-down industrial control system provided by industry partner Dragos, Inc.
+                                </p>
+                                                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+  </div>
+
+              <div class="cog--mq mq-branding">
+              <div id="branding-region">
+            <div class="region region-branding">
+    <div id="block-sitebranding" data-block-plugin-id="system_branding_block" class="site-branding block block-system block-system-branding-block">
+
+
+              <a href="/" title="Home" rel="home" class="logo">
+            <img src="/sites/g/files/yyqcgq321/files/Web-Mason50-lockup-stacked-whiteandgold%403x_0_4.png" alt="Home"/>
+        </a>
+                <div class="site-branding-text">
+                            <div class="site-branding-name">
+                    <a href="/" title="Home" rel="home">Volgenau School of Engineering</a>
+                </div>
+                                        <div class="site-branding-abbr">
+                    <a href="/" title="Home" rel="home">Volgenau</a>
+                </div>
+
+                    </div>
+    </div>
+
+  </div>
+
+        </div>
+          </div>
+  </header>
+
+                            <h1 class="page-title background-overlay">Home </h1>
+
+      <!-- /branding -->
+  <div id="pg__c" class="page-standard">
+    <!-- ______________________ HEADER ______________________ -->
+    <header id="header">
+      <div class="cog--mq mq-header">
+              </div>
+    </header>
+    <!-- ______________________ Pre content _______________________ -->
+
+    <!-- ______________________ MAIN _______________________ -->
+
+    <div class="clearfix" id="main">
+      <div class="cog--mq mq-main">
+
+                <!-- /sidebar-first -->
+
+        <section id="content">
+
+
+          <div class="content-area">
+              <div class="region region-content">
+    <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-sf-mason-basic-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+
+
+
+<article  role="article" about="/home" class="entity--type-node node node--type-landing-page node--view-mode-full">
+
+
+  <div class="content">
+    <div class="layout layout--gmu layout--onecol-section layout--onecol-section--100">
+  <div >
+
+  </div>
+</div>
+<div class="layout layout--gmu layout--onecol-section layout--onecol-section--100">
+  <div  class="layout__region region-first">
+
+<div data-block-plugin-id="inline_block:mosaic" data-inline-block-uuid="393f4120-220c-4b94-a222-4134a7bb0bbb" class="block-text-tile b-mosaic block block-layout-builder block-inline-blockmosaic text-tile-masongold" data-bundle-class="mosaic"  style="background-color: #FFCC33 ">
+
+
+
+  <div class="field field--name-field-mosaic-items field--type-entity-reference-revisions field--label-visually_hidden">
+    <div class="field__label visually-hidden">Mosaic tile</div>
+              <div class="field__item">
+
+<a href="/academics/why-choose-volgenau" >
+  <div class="paragraph paragraph--type--text-tile paragraph--view-mode--default paragraph-text-tile">
+          <div class="text-tile-caption-wrapper" style="background-color: #FFCC33;">
+                       <div class="mosaic-tile-icon">
+              <i class="fas fa-university" style="color: #000000;"></i>
+            </div>
+
+                  <div class="text-tile-title" style="color: #000000;">
+              Why Study Here?
+            </div>
+                      </div>
+      </div>
+</a>
+</div>
+          </div>
+
+  </div>
+
+  </div>
+</div>
+<div class="layout layout--mosaic layout--threecol-section layout--threecol-section--33-34-33 layout--threecol-section-spacing--medium layout--mosaic-medium">
+  <div  class="layout__region region-first">
+
+<div data-block-plugin-id="inline_block:mosaic" data-inline-block-uuid="73068ac0-42ed-460c-8fe6-ef05454d8ced" class="block block-layout-builder block-inline-blockmosaic" ">
+
+
+
+  <div class="field field--name-field-mosaic-items field--type-entity-reference-revisions field--label-visually_hidden">
+    <div class="field__label visually-hidden">Mosaic tile</div>
+              <div class="field__item">
+      <a href="https://volgenau.gmu.edu/research">
+        <div class="paragraph paragraph--type--image-tile paragraph--view-mode--default paragraph-image-tile"  style="background-image: url(https://volgenau.gmu.edu/sites/g/files/yyqcgq321/files/2021-06/research%20volgenau%20home.jpg)" >
+              <div class="image-tile-image">
+          <div class="image-tile-caption-wrapper">
+                          <span class="image-tile-title">
+              Research
+            </span>
+                                      <div class="image-tile-caption">
+                Discover how we stay on the cutting edge of engineering innovation.
+              </div>
+                      </div>
+        </div>
+          </div>
+        </a>
+  </div>
+          </div>
+
+  </div>
+
+  </div>
+  <div  class="layout__region region-second">
+
+<div data-block-plugin-id="inline_block:mosaic" data-inline-block-uuid="26cd4568-da57-40c4-934f-711e17bad974" class="block block-layout-builder block-inline-blockmosaic" ">
+
+
+
+  <div class="field field--name-field-mosaic-items field--type-entity-reference-revisions field--label-visually_hidden">
+    <div class="field__label visually-hidden">Mosaic tile</div>
+              <div class="field__item">
+      <a href="https://volgenau.gmu.edu/partners">
+        <div class="paragraph paragraph--type--image-tile paragraph--view-mode--default paragraph-image-tile"  style="background-image: url(https://volgenau.gmu.edu/sites/g/files/yyqcgq321/files/2021-06/Partners%20volgenau%20homepage.jpg)" >
+              <div class="image-tile-image">
+          <div class="image-tile-caption-wrapper">
+                          <span class="image-tile-title">
+              Partners
+            </span>
+                                      <div class="image-tile-caption">
+                Learn about our partnerships with government, industry, and beyond.
+              </div>
+                      </div>
+        </div>
+          </div>
+        </a>
+  </div>
+          </div>
+
+  </div>
+
+  </div>
+  <div  class="layout__region region-third">
+
+<div data-block-plugin-id="inline_block:mosaic" data-inline-block-uuid="a374928b-df2d-4450-b488-d36701857e00" class="block block-layout-builder block-inline-blockmosaic" ">
+
+
+
+  <div class="field field--name-field-mosaic-items field--type-entity-reference-revisions field--label-visually_hidden">
+    <div class="field__label visually-hidden">Mosaic tile</div>
+              <div class="field__item">
+      <a href="https://volgenau.gmu.edu/academics">
+        <div class="paragraph paragraph--type--image-tile paragraph--view-mode--default paragraph-image-tile"  style="background-image: url(https://volgenau.gmu.edu/sites/g/files/yyqcgq321/files/2021-06/academics%20volgenau%20home.jpg)" >
+              <div class="image-tile-image">
+          <div class="image-tile-caption-wrapper">
+                          <span class="image-tile-title">
+              Academics
+            </span>
+                                      <div class="image-tile-caption">
+                Explore our programs and meet our faculty.
+              </div>
+                      </div>
+        </div>
+          </div>
+        </a>
+  </div>
+          </div>
+
+  </div>
+
+  </div>
+</div>
+<div class="layout layout--gmu layout--twocol-section layout--twocol-section--50-50">
+  <div  class="layout__region region-first">
+    <div data-block-plugin-id="inline_block:text" data-inline-block-uuid="7bbc1b3b-0586-4a5b-af74-747ecd57ba3d" class="block block-layout-builder block-inline-blocktext">
+
+      <h2>Learn about our programs: </h2>
+
+
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2><a href="https://volgenau.gmu.edu/academics/bioengineering-department">Bioengineering</a></h2>
+<h2><a href="https://volgenau.gmu.edu/academics/civil-environmental-and-infrastructure-engineering">Civil, Environmental, and Infrastructure Engineering</a></h2>
+<h2><a href="https://volgenau.gmu.edu/academics/cyber-security-department">Cyber Security Engineering</a></h2>
+<h2><a href="https://volgenau.gmu.edu/academics/electrical-and-computer-engineering">Electrical and Computer Engineering</a></h2>
+<h2><a href="https://volgenau.gmu.edu/academics/mechanical-engineering-department">Mechanical Engineering</a></h2>
+<h2><a href="https://volgenau.gmu.edu/academics/systems-engineering-and-operations-research">Systems Engineering and Operations Research</a></h2>
+<h2><a href="https://volgenau.gmu.edu/academics/data-analytics-engineering" target="_blank">Data Analytics Engineering</a></h2>
+</div>
+
+  </div>
+
+  </div>
+  <div  class="layout__region region-second">
+
+
+<div data-block-plugin-id="inline_block:feature_image" data-inline-block-uuid="121844bb-110a-47cd-8d6e-a55ba69ad871" class="block block-feature-image block-layout-builder block-inline-blockfeature-image text-overlaid">
+
+           <div class="feature-image">
+
+                <div class="narrow-overlaid-image">
+                     <img src="/sites/g/files/yyqcgq321/files/styles/feature_image_medium/public/2021-02/Sidney-homepage.jpg?itok=xpjG4_dh"
+                     srcset="/sites/g/files/yyqcgq321/files/styles/feature_image_small/public/2021-02/Sidney-homepage.jpg?itok=1NfHCuw6 768w,/sites/g/files/yyqcgq321/files/styles/feature_image_medium/public/2021-02/Sidney-homepage.jpg?itok=xpjG4_dh 1024w,/sites/g/files/yyqcgq321/files/styles/feature_image_large/public/2021-02/Sidney-homepage.jpg?itok=zSzUzAQn 1280w,"
+                     sizes="(min-width: 1024px) 80vw,100vw"
+                     alt="Sidney Boakye in the space museum in a NASA tshirt. ">
+                                            <div class="narrow-overlaid-headline">
+
+            <div class="field field--name-field-feature-image-headline field--type-string field--label-hidden field__item">First Mason student wins prestigious fellowship</div>
+
+                        </div>
+                                    </div>
+
+
+
+                          <div class="headline-text">
+                                     <div class="feature-image-headline">
+
+            <div class="field field--name-field-feature-image-headline field--type-string field--label-hidden field__item">First Mason student wins prestigious fellowship</div>
+
+                    </div>
+
+                                    <div class="feature-image-caption">
+            <div class="field field--name-field-feature-image-caption field--type-text-long field--label-hidden field__item"><p>Senior mechanical engineering major Sidney Boakye was named a Matthew Isakowitz Fellow. The Isakowitz fellowship aims to immerse students in commercial spaceflight through mentorship, summer internships, and networking. </p></div>
+      </div>
+                                                                    <div class="feature-image-link">
+            <div class="field field--name-field-feature-image-link field--type-link field--label-hidden field__item"><a href="https://volgenau.gmu.edu/news/2021-02/first-mason-student-wins-prestigious-commercial-spaceflight-fellowship">Read the Article</a></div>
+      </div>
+                                </div>
+                    </div>
+
+    </div>
+  </div>
+</div>
+<div class="layout layout--gmu layout--onecol-section layout--onecol-section--100">
+  <div >
+
+  </div>
+</div>
+<div class="layout layout--gmu layout--threecol-section layout--threecol-section--33-34-33">
+  <div >
+
+  </div>
+  <div >
+
+  </div>
+  <div >
+
+  </div>
+</div>
+<div class="layout layout--gmu layout--twocol-section layout--twocol-section--50-50">
+  <div >
+
+  </div>
+  <div >
+
+  </div>
+</div>
+<div class="layout layout--gmu layout--onecol-section layout--onecol-section--100">
+  <div  class="layout__region region-first">
+
+<div data-block-plugin-id="inline_block:mosaic" data-inline-block-uuid="7a0f27d9-d3b7-447f-9cb7-a9ef96afe28a" class="block-text-tile b-mosaic block block-layout-builder block-inline-blockmosaic text-tile-masongreen" data-bundle-class="mosaic"  style="background-color: #006633 ">
+
+
+
+  <div class="field field--name-field-mosaic-items field--type-entity-reference-revisions field--label-visually_hidden">
+    <div class="field__label visually-hidden">Mosaic tile</div>
+              <div class="field__item">
+
+<a href="/about/news-information" >
+  <div class="paragraph paragraph--type--text-tile paragraph--view-mode--default paragraph-text-tile">
+          <div class="text-tile-caption-wrapper" style="background-color: #006633;">
+
+                  <div class="text-tile-title" style="color: #ffffff;">
+              Read Our News
+            </div>
+                      </div>
+      </div>
+</a>
+</div>
+          </div>
+
+  </div>
+
+  </div>
+</div>
+<div class="layout layout--gmu layout--twocol-section layout--twocol-section--50-50">
+  <div  class="layout__region region-first">
+
+
+<div data-block-plugin-id="inline_block:feature_image" data-inline-block-uuid="c8211919-ea37-4dcf-a9af-05881054ad79" class="block block-feature-image block-layout-builder block-inline-blockfeature-image text-overlaid">
+
+           <div class="feature-image">
+
+                <div class="narrow-overlaid-image">
+                     <img src="/sites/g/files/yyqcgq321/files/styles/feature_image_medium/public/2021-01/Lance-homepage.jpg?itok=1X6j7eE0"
+                     srcset="/sites/g/files/yyqcgq321/files/styles/feature_image_small/public/2021-01/Lance-homepage.jpg?itok=KPaaNT-y 768w,/sites/g/files/yyqcgq321/files/styles/feature_image_medium/public/2021-01/Lance-homepage.jpg?itok=1X6j7eE0 1024w,/sites/g/files/yyqcgq321/files/styles/feature_image_large/public/2021-01/Lance-homepage.jpg?itok=DRG71O89 1280w,"
+                     sizes="(min-width: 1024px) 80vw,100vw"
+                     alt="Lance Sherry standing outside with a bright blue sky and a plane flying through the air.">
+                                            <div class="narrow-overlaid-headline">
+
+            <div class="field field--name-field-feature-image-headline field--type-string field--label-hidden field__item">NASA award to prevent airline accidents</div>
+
+                        </div>
+                                    </div>
+
+
+
+                          <div class="headline-text">
+                                     <div class="feature-image-headline">
+
+            <div class="field field--name-field-feature-image-headline field--type-string field--label-hidden field__item">NASA award to prevent airline accidents</div>
+
+                    </div>
+
+                                    <div class="feature-image-caption">
+            <div class="field field--name-field-feature-image-caption field--type-text-long field--label-hidden field__item"><p>Lance Sherry in the Department of Systems Engineering and Operations Research and other researchers created a unique way to help prevent airline accidents. </p>
+
+<p> </p></div>
+      </div>
+                                                                    <div class="feature-image-link">
+            <div class="field field--name-field-feature-image-link field--type-link field--label-hidden field__item"><a href="https://volgenau.gmu.edu/news/2020-10/aviation-experts-receive-nasa-award-research-prevent-airline-accidents">Read the Article</a></div>
+      </div>
+                                </div>
+                    </div>
+
+    </div>
+  </div>
+  <div  class="layout__region region-second">
+
+
+<div data-block-plugin-id="inline_block:news_list" data-inline-block-uuid="f3a0c332-4812-47c7-beea-4cfdfb15ed45" class="block block-layout-builder block-inline-blocknews-list">
+
+      <h2>Headlines:</h2>
+
+      <div class="views-element-container"><div class="view view-news view-id-news view-display-id-block_1 js-view-dom-id-76c9e9e967bec3abb581a8fd8736cac9e184686620137e78eb89808bc1db6a9a">
+
+
+
+      <div class="view-content">
+      <div class="news-list-wrapper">
+
+  <ul class="news-list">
+
+          <li class="news-item"><div class="views-field views-field-title"><span class="field-content"><a href="/news/2022-09/china-browns-advice-building-strong-future-take-your-time" hreflang="en">China Brown&#039;s advice for building a strong future? Take your time.</a></span></div><div class="views-field views-field-field-publish-date"><div class="field-content">September 26, 2022</div></div></li>
+          <li class="news-item"><div class="views-field views-field-title"><span class="field-content"><a href="/news/2022-09/mason-hosts-workshop-researchers-addressing-global-warming-aircraft-clouds" hreflang="en">Mason hosts workshop for researchers addressing global warming from aircraft clouds</a></span></div><div class="views-field views-field-field-publish-date"><div class="field-content">September 23, 2022</div></div></li>
+          <li class="news-item"><div class="views-field views-field-title"><span class="field-content"><a href="/news/2022-08/maritime-robotics-summer-camps-move-young-minds-toward-future-stem" hreflang="en">Maritime robotics summer camps move young minds toward a future in STEM</a></span></div><div class="views-field views-field-field-publish-date"><div class="field-content">August 12, 2022</div></div></li>
+          <li class="news-item"><div class="views-field views-field-title"><span class="field-content"><a href="/news/2022-08/traccc-and-amazon-team-policy-hackathon-stop-counterfeiters" hreflang="en">TraCCC and Amazon team up for policy hackathon to stop counterfeiters</a></span></div><div class="views-field views-field-field-publish-date"><div class="field-content">August 8, 2022</div></div></li>
+          <li class="news-item"><div class="views-field views-field-title"><span class="field-content"><a href="/news/2022-08/summer-saturdays-spark-interest-stem" hreflang="en">Summer Saturdays Spark Interest in STEM</a></span></div><div class="views-field views-field-field-publish-date"><div class="field-content">August 3, 2022</div></div></li>
+
+  </ul>
+
+</div>
+
+    </div>
+
+          </div>
+</div>
+
+  </div>
+
+  </div>
+</div>
+<div class="layout layout--gmu layout--onecol-section layout--onecol-section--100">
+  <div >
+
+  </div>
+</div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div data-block-plugin-id="extra_field_block:node:landing_page:links" class="block block-layout-builder block-extra-field-blocknodelanding-pagelinks">
+
+
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+<!-- /content -->
+
+
+
+
+</article>
+<!-- /article #node -->
+
+  </div>
+
+  </div>
+
+          </div>
+
+
+
+        </section>
+        <!-- /content-inner /content -->
+
+                <!-- /sidebar-first -->
+
+      </div>
+      <!-- /cog--mq -->
+    </div>
+    <!-- /main -->
+
+    <!-- ______________________ Post content _______________________ -->
+
+
+    <!-- ______________________ FOOTER _______________________ -->
+
+          <footer id="footer" class="sf_mason_basic_footer">
+        <div class="cog--mq mq-footer">
+            <div class="region region-footer">
+    <div id="block-fixedblocksocialmedialinks" class="block--social-media-links block--bundle-social-media-links b-social-media-links block block-fixed-block-content block-fixed-block-contentfixed-block-social-media-links-" data-block-plugin-id="fixed_block_content:fixed_block_social_media_links_" data-bundle-class="social-media-links">
+
+
+
+  </div>
+<div id="block-footerinformation" class="footer-information-desktop block block-gmu-core block-footer-info" data-block-plugin-id="footer_info">
+
+
+      <div class="site-info"><span class="footer-logo"><img class="logo" alt="George Mason University" src="/themes/custom/sf_mason_basic/images/mason-logo.png"></span><div class="site-name">Volgenau School of Engineering</div><div class="site-abbr">Volgenau</div></div><div class="site-info-wrapper"><h2 class="site-slogan">PATRIOTS BRAVE &amp; BOLD</h2><div class="footer-info"><p><strong>The Volgenau School of Engineering at George Mason University</strong><br />
+4511 Patriot Cir, Fairfax, VA 22030<br />
+<a href="tel:17039931000" title="Click to call">Tel:703-993-1000</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+ <div class="footer-copyright">&copy; 2022 George Mason University</div></div></div>
+  </div>
+<div id="block-footermenublock" class="footer-links block block-gmu-core block-footer-menu-block" data-block-plugin-id="footer_menu_block">
+
+
+      <div id="footer-link">
+  <ul>
+    <li class="sitemap">
+      <a href="route:<nolink>">Sitemap</a>
+    </li>
+        <li>
+      <a href =route:&lt;nolink&gt;>Sitemap
+      </a>
+    </li>
+        <li>
+      <a href =https://info.gmu.edu/campus-information/university-switchboard/#SkypeChat>Contact via Skype
+      </a>
+    </li>
+        <li>
+      <a href =https://diversity.gmu.edu/title-ix>Title IX
+      </a>
+    </li>
+        <li>
+      <a href =https://accessibility.gmu.edu/>Accessibility
+      </a>
+    </li>
+        <li>
+      <a href =https://jobs.gmu.edu/>Jobs
+      </a>
+    </li>
+        <li>
+      <a href =https://oiep.gmu.edu/resources/student-consumer-information/>Student Consumer Information
+      </a>
+    </li>
+        <li>
+      <a href =https://www2.gmu.edu/about-mason/internet-privacy>Privacy Statement
+      </a>
+    </li>
+        <li>
+      <a href =https://www2.gmu.edu/about-mason/freedom-information-act-requests>FOIA
+      </a>
+    </li>
+      </ul>
+</div>
+
+  </div>
+<div id="block-footerinformation-2" class="footer-information-mobile block block-gmu-core block-footer-info" data-block-plugin-id="footer_info">
+
+
+      <div class="site-info"><span class="footer-logo"><img class="logo" alt="George Mason University" src="/themes/custom/sf_mason_basic/images/mason-logo.png"></span><div class="site-name">Volgenau School of Engineering</div><div class="site-abbr">Volgenau</div></div><div class="site-info-wrapper"><h2 class="site-slogan">PATRIOTS BRAVE &amp; BOLD</h2><div class="footer-info"><p><strong>The Volgenau School of Engineering at George Mason University</strong><br />
+4511 Patriot Cir, Fairfax, VA 22030<br />
+<a href="tel:17039931000" title="Click to call">Tel:703-993-1000</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+ <div class="footer-copyright">&copy; 2022 George Mason University</div></div></div>
+  </div>
+
+
+<nav role="navigation"  id="block-sitemap" class="footer-sitemap-links block block-menu navigation block-system-menublock menu--main" data-block-plugin-id="system_menu_block:main">
+  <div class="mobile-only"><div data-block-plugin-id="system_branding_block" class="site-branding block block-system block-system-branding-block">
+
+
+              <a href="/" title="Home" rel="home" class="logo">
+            <img src="/sites/g/files/yyqcgq321/files/Web-Mason50-lockup-stacked-whiteandgold%403x_0_4.png" alt="Home"/>
+        </a>
+                <div class="site-branding-text">
+                            <div class="site-branding-name">
+                    <a href="/" title="Home" rel="home">Volgenau School of Engineering</a>
+                </div>
+                                        <div class="site-branding-abbr">
+                    <a href="/" title="Home" rel="home">Volgenau</a>
+                </div>
+
+                            <div class="site-branding-slogan">PATRIOTS BRAVE &amp; BOLD</div>
+                    </div>
+    </div>
+</div>
+
+
+              <ul class="menu menu-level--0">
+          <li class="home-icon"> <a href="/" aria-label="home" class="js-home"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
+          <li class="main-menu-item multiline">
+        <a href="/academics/why-choose-volgenau" data-drupal-link-system-path="node/21">Why Choose Volgenau?</a>
+              </li>
+          <li class="main-menu-item">
+        <a href="/academics" data-drupal-link-system-path="node/11">Academics</a>
+              </li>
+          <li class="main-menu-item">
+        <a href="/research" data-drupal-link-system-path="node/176">Research</a>
+              </li>
+          <li class="main-menu-item">
+        <a href="/partners" data-drupal-link-system-path="node/411">Partners</a>
+              </li>
+          <li class="main-menu-item">
+        <a href="/about" data-drupal-link-system-path="node/326">About</a>
+              </li>
+              <li id="custom-search-block-container">
+        <div class="search-form-wrapper" id="search-form-wrapper">
+    <a class="off-screen search-icon" aria-label="Open and close search form" id="search-icon" href="/st-search" tabindex=""></a>
+</div>
+
+      </li>
+
+    </ul>
+
+
+
+    <div class="mobile-nav">
+    <div data-block-plugin-id="utility_menu_block" class="block-utilitymenublock block block-gmu-core block-utility-menu-block">
+
+
+      <div class="utility-link">
+  <ul>
+        <li>
+      <a href =/admissions-aid/apply-now>Apply
+      </a>
+    </li>
+        <li>
+      <a href =/give>Give
+      </a>
+    </li>
+        <li>
+      <a href =http://mymason.gmu.edu>MyMason
+      </a>
+    </li>
+        <li>
+      <a href =https://patriotweb.gmu.edu/>PatriotWeb
+      </a>
+    </li>
+        <li>
+      <a href =http://peoplefinder.gmu.edu/>Peoplefinder
+      </a>
+    </li>
+        <li>
+      <a href =http://www.gomason.com/>Athletics
+      </a>
+    </li>
+        <li>
+      <a href =/news>News
+      </a>
+    </li>
+        <li>
+      <a href =/calendar>CALENDAR
+      </a>
+    </li>
+        <li>
+      <a href =https://library.gmu.edu/>Library
+      </a>
+    </li>
+        <li>
+      <a href =/graduation>Graduation
+      </a>
+    </li>
+      </ul>
+</div>
+
+  </div>
+
+  </div>
+</nav>
+  </div>
+
+        </div>
+      </footer>
+      <!-- /footer -->
+
+  </div>
+  <!-- /page -->
+</div>
+
+  </div>
+</div>
+
+
+</body>
+</html>
+
+<!---
+Name: Joel Sadanand Samson
+G#: G01352483
+-->

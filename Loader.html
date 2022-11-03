@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="index.css">
+<script src="https://kit.fontawesome.com/117510c07d.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+</script>
+<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
+			integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+        
+        
+    </head>
+    <body>
+      <!---Loader-->
+        <script>
+            $(window).on("load",function(){
+      $(".loader-wrapper").fadeOut(3000);
+    
+      //$("#myDiv").fadeIn(6000);
+    })
+   
+
+    function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+delay(3000).then(() => window.open("main.html","_self"));
+
+        </script>
+        <div class="loader-wrapper">
+            <div class="outer">
+              <div class="loader">
+                <span></span>
+                <p>Loading</p>
+              </div>
+            </div>
+          </div>
+
+       
+    </body>
+</html>
