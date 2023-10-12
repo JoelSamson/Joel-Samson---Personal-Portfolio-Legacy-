@@ -70,7 +70,7 @@ Keep the README file comprehensive and updated. Provide clear instructions on ho
 
 By addressing these aspects, you can significantly improve the portfolio project's structure, maintainability, and overall developer experience.
 
-## How to Contact Me
+# How to Contact Me
 
 Have questions or want to collaborate? Reach out via the **Contact Section** on my website. Whether you're interested in my work or just want to say hello, I'm always happy to connect and engage in meaningful conversations.
 
